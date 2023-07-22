@@ -1,0 +1,214 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{amsfonts}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{parskip}
+\usepackage[super,numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\renewcommand{\bibfont}{\small}
+
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\Large#1\end{center}
+   }%
+}
+
+\newcommand{\subsubtitle}[1]{%
+  \preauthor{%
+    \begin{center}
+    \large #1 \vskip0.5em
+    \begin{tabular}[t]{c}
+    }%
+}
+
+\title{Research Proposal}
+\subtitle{Implementation of Formal Semantics and the Potential of Non-Classical Logic Systems for the Enhancement of Access Control Models}
+\author{Alvin Tang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+Cyber security has been a significant branch of computer science as digital systems have been critical in people’s lives since the extensive digitisation of our daily tasks and businesses in modern society. The importance of protecting digitally-stored data and ensuring the integrity of access control have been more important than ever before. Inadequate level of awareness towards computer security and poor implementations of cyber security protocols in the industry, however, are posing risks that may undermine the integrity of software systems. Whilst there is an growing occurrence of data breaches in the industry, it is imperative for researchers to discover the prevention thereof.\cite{cyber-security}
+
+From the practical data breach detection with zero persistent secret state\cite{zero-persistent} to the semantics for a logic of authentication\cite{logic-semantics}, formal methods and logic have been asserted to be just as crucial as the implementations of computing with programming and software design. The underlying mathematical principles of computation play a notable role in ensuring that our encryption and validation protocols are resilient to security attacks. Access control, in particular, is an essential component of computer systems to manage the permissions of users and processes to retrieve and manipulate data.
+
+In this proposed research, we shall analyse the roles of logic and semantics in systematising the foundational concepts of access control models, their consequent limitations arising from the essence of classical logic and potential solutions with alternative logic systems. Envisioning to focus on the utilisation of set theory and sequents to convey the semantics in these models, we will, for instance, study the significance of modal logic in role-based access control (RBAC) policies due to its value in displaying how the completeness and consistency of cyber security protocols can be proven theoretically.\cite{modal-logic} We should subsequently reveal the prevalent vulnerabilities and concerns regarding current theories, as well as how alternative logic systems can form the foundation of refined models to encounter the challenges.
+
+Linux and plenty of Unix-based systems, being common options of operating systems for server hosting, implement simple access control models by default. The management of permissions to read, write and execute files and directories are performed by identifying users with a numerical system.\cite{ubuntu} Notwithstanding the fact that a simple access control model provides the advantages of being lightweight and uncomplicated to manage, it may not offer the most advanced features or the most granular control in more complex systems. Role-based access control (implemented in SELinux, for example), on the other hand, maximises the flexibility and effectiveness to manage permissions based on the principle of least privilege and consideration of users’ roles, job functions and other attributes. The foundation of this concept is primarily attributed to formal logic as we use relations and sequents to coherently express role hierarchies, users’ attributions and decision methods.\cite{rbac}
+
+Whilst the majority of theoretical computer science concepts are derived from classical logic, with binary truth values and the principle of explosion as some of its major characteristics, we shall reckon the potential of applying non-orthodox logic systems, including fuzzy logic and paraconsistent (e.g. relevant) logic, in cyber security to model and reason about systems where uncertainty or inconsistency are present. As another major focus of the study, we anticipate elucidating the potential vulnerabilities of popular access control systems and how non-classical logic systems may contribute to resolutions of the most prevalent issues in current technologies.
+
+\section*{Research Problem}
+
+\subsection*{Defining Key Terms}
+
+In order to succinctly identify the focus of the research, we should begin by clearly defining \textit{cyber security}, \textit{access control} and how the principles of the former are fulfilled by the objectives of the latter. This enables us to better achieve the purposes of investigating existing access control models and proffering improvements with new models.
+
+The common definition of \textit{cyber security} refers to ``the collection of tools, policies, security concepts, security safeguards, guidelines, risk management approaches, actions, training, best practices, assurance and technologies that can be used to protect the cyber environment and organisation and user’s assets''.\cite{itu}
+
+There are plenty of cyber security principles, including open design, least privilege and compartmentalisation.\cite{principles}\cite{computer-security} The principle of open design affirms that the security of a system should not depend on the secrecy of its protection mechanisms. The concept of least privilege ensures that any component of a system should operate using the least set of permissions to complete its job. Compartmentalisation organises resources into isolated groups of similar needs. These are all features which help achieve the security of data and systems.
+
+Meanwhile, \textit{access control} is a strategy to limit access to a computing system by\cite{access-control}
+\begin{itemize}
+    \item deciding whom they would like to give access privileges to,
+    \item determining which roles require what access, and
+    \item enforcing access control limits.
+\end{itemize}
+The objective of implementing access control is to minimise the risk of unauthorised access to important information.
+
+Access control in digital systems ensures cyber security with a set of rules to determine roles and privileges. Given this nature, access control theories may be classified as \textit{tools and foundations of technologies based on the enforcement of policies}.
+
+Modern access control theories comprehensively fulfil the principles of cyber security. The implementation of discretionary access control, for example, is publicly scrutinised by academics\cite{dac}\cite{safety-dac} for its safety while the use of one-time passwords in multi-factor authentication is developed from the knowledge of hash chains. The successful deployment of these technologies can be attributed to the fact that they are secure even if their underlying mechanisms are publicly known. A well-implemented access control system, furthermore, ensures security by offering minimal privileges to users and processes.\cite{crypto} This fulfils the principle of least privilege.
+
+\subsection*{Research Questions}
+
+With the above key terms and concepts well-delineated, the research can accordingly be tersely summarised as the following inquiries.
+\begin{enumerate}
+    \item How are formal logic and semantics applied in the principles of existing access control models?
+    \item How do the features of classical logic lead to limitations in existing access control models?
+    \item How can non-orthodox logic systems contribute to the development of more expressive, flexible and comprehensive access control models?
+\end{enumerate}
+
+\subsection*{Roles and Importance of Logic in Access Control Models}
+
+Whilst the development of access control systems are chiefly concentrated on software engineering and operating systems design, formal logic and semantics are equally indispensable for their underlying foundations as theoretical models as they provide rigorous modalities to reason about the correctness and integrity of these systems.
+
+Experts have developed a wide variety of ideas using axioms and sequents to represent the role hierarchies and user attributes, as well as the resultant reasoning services, to define the policies in the access control system.\cite{rbac}
+
+In addition to the role-based access control model as aforementioned, researchers have developed the attribute-based access control model (ABAC) with a logic-oriented framework. Unlike RBAC, which restricts access to resources dependent on the roles assigned to users, ABAC uses attributes of users, resources and the environment to render access control decisions.\cite{rbac-abac} Both frameworks rely on expressions of policies with set, relations and sequents.
+
+An approach to define ABAC policies suggested by researchers, as a concrete example, is to construct rules using constraint predicates. \texttt{cando(X,Y,$\pm$,Z)} is a basic example. The 4-ary predicate where $X$ and $Y$ are attribute and service set terms, intuitively meaning that set $X$ is authorised/prohibited in using services $Y$.\cite{abac}
+
+Hence, we may clearly observe that formal logic and semantics are critical tools to help us ensure that the designs of access control systems provide the necessary level of security and protection for sensitive information and resources. In this research, therefore, we will ascertain and analyse how logic and semantics are applied in existing access control models.
+
+\subsection*{Research Significance and Potential Achievements}
+
+The vast majority of theories relevant to access control models and, in general, cyber security are grounded on classical (orthodox) logic. Modal logic adopted for RBAC, for instance, is an extension of classical logic that adds operators to express modalities such as necessity and possibility. Nevertheless, there are concerns arising from the characteristics of orthodox logic. The features of this traditional logic system include but are not exclusive to:\cite{classical-logic}
+\begin{enumerate}
+    \item Having exactly two truth values (i.e. true/false);
+    \item The law of excluded middle: the negation of a true statement is false, and vice versa;
+    \item The principle of identity: every object is identical to itself;
+    \item The principle of non-contradiction: a proposition and its negation cannot be true at the same time.
+\end{enumerate}
+
+There are moreover some potentially undesirable attributes from the most elementary definitions of logical connectives. Consider the propositional formula $p \to q$. When premise $p$ is false, the whole implication statement is true by definition. In fact, there is no requirement that $p$ and $q$ have to be related to each other in any respect. This is regarded as the principle of explosion (\textit{ex falso quodlibet}).
+
+Such definitions and their resultant phenomena, however, may be concerns when we use this logic system in practical situations to express and validate access control models. In actual cyber security implementations, indeterminate or insufficient information is often dealt with. For example, in RBAC systems, it may not always be possible to determine all the permissions that a user/role has or all the resources that a user/role can access owing to the proscription of uncertainty in classical logic.
+
+To tackle these concerns, alternative logic systems such as fuzzy logic, relevant logic and intuitionistic logic may be considered for creating ameliorated access control policies. These logics can allow for reasoning about uncertain or incomplete information and provide more flexible and expressive ways for the design and analysis of new models.
+
+Hence, the final objective of this research is to unearth the possibility of using unconventional logic systems and to investigate the advantages or otherwise thereof.
+
+Benefiting from the outcomes of this research, designers of computer systems, especially contemporary types of architectures (e.g. distributed systems) may address prevalent issues with existing access control models.
+
+\section*{Methodology}
+
+Based on the three main research questions specified above, the inquiry shall be conducted in various approaches in order to obtain a comprehensive understanding of existing access control models and to uncover possible ways to develop more enhanced models with non-classical logic systems.
+
+\subsection*{Understanding Logic in Existing Models}
+
+The project shall begin by exploring the ongoing work of scholars in expressing popular access control models with formal logic. In particular, it is proposed that the previous research papers relevant to the following models should be analysed:
+\begin{enumerate}
+    \item Discretionary Access Control (DAC)
+    \item Role-Based Access Control (RBAC)
+    \item Attribute-Based Access Control (ABAC)
+    \item Bell-LaPadula Model (BLP)
+\end{enumerate}
+
+These models are valued in a diverse set of situations inasmuch as their characteristics cater to various needs. DAC is commonly operationalised in personal computer systems, where users should have complete control over their machines. RBAC and ABAC are applied in more complex systems whilst BLP is utilised when strict confidentiality of data is necessary. We will examine how these models apply formal logic in different ways in order to suit their specifications.
+
+Since formal language and grammar are major parts of logic and semantics in access control models, we may perform investigations of languages for access control, such as the one researched by Kumar Avijit.\cite{language}
+
+As an example, suppose $\mathbf{w}$ and $R$ are a user and an object (file/process) in this language respectively. Predicates are developed to articulate ownership and permissions, such as follows.
+\begin{itemize}
+    \item $\texttt{owns}(\mathbf{w},R)$ means $\mathbf{w}$ possesses ownership of $R$.
+    \item $\texttt{mayrd}(\mathbf{w},R)$ denotes $\mathbf{w}$ has the permission to read the file $R$.
+    \item $\texttt{maywt}(\mathbf{w},R)$ indicates $\mathbf{w}$ has the permission to write the file $R$.
+\end{itemize}
+
+Subsequently, we are able to formulate axioms, such as
+$$\forall w . \forall R . \texttt{owns}(\mathbf{w},R) \supset \texttt{mayrd}(\mathbf{w},R)$$
+which refers to the rule that ownership implies permission to read. (Note that this is an \textit{axiom} defined in this language, which is not always true in reality.)
+
+The language is then introduced to be expressed in sequents for better coherency and static typing, which ensures that the logic is consistent. Here is an example of a deduction rule defined by the author:
+$$\frac{\pi \vdash_{\mathcal{L}} m : p_{1} \land p_{2}}{\pi \vdash_{\mathcal{L}} \texttt{fst}_{\mathcal{L}} m : p_{1}}(\land E1)$$
+
+$\pi$ refers to a hypothesis while $p_{1}$ and $p_{2}$ are propositions. $\texttt{fst}_{\mathcal{L}} m$ is a proof term. This rule closely resembles conjunction elimination in natural deductions and sequent calculus, which are important formal proof methods.
+
+By using static typing, the researcher is able to prove that the language is type-safe, which assures the security of the model by preventing security vulnerabilities caused by misconfigured policies. Rules for formal proofs with sequents also enable developers of the models to better maintain the system.\cite{language}
+
+There is a considerable variety of languages and formal grammar proposed by academics. In this research, they can be compared for similarities and characteristics in order to understand how precisely logic plays a critical role.
+
+\subsection*{Investigating the Limitations of Existing Models}
+
+To explore the shortcomings of existing access control models, we shall focus on the fundamental causes attributed to the distinctive qualities of classical logic.
+
+As an illustration, a feature in RBAC is that the user is either granted or denied access to a file predicated on their roles and permissions. This is consistent with the prominent property of orthodox logic that each statement has a truth value, which can only be either true or false. In practical situations, nonetheless, binary truth values may not be sufficient to express the decisions for managing permissions.
+
+Role explosion is another concern in RBAC. As the complexity of a system increases, the number of roles and permissions may grow exponentially. This can lead to a combinatorial explosion in the number of possible access control configurations, making it arduous to manage and verify the policies.\cite{role-explosion}
+
+In addition, RBAC may be susceptible to insider threat, where a user with legitimate access may abuse their privileges to access sensitive resources.\cite{insider-threat}
+
+There are plenty of models in addition to RBAC. Each option has advantages and drawbacks. In this research project, we should conduct analyses to discover the limitations of the four models as stated discussed, as well as how classical logic is attributed to their constraints.
+
+\subsection*{Discovering the Potential of Non-Classical Logic for Enhanced Models}
+
+There are plenty of alternative logic systems, including the following options.
+\begin{enumerate}
+    \item Fuzzy logic: a continuous range of truth values between 0 and 1 replaces bivalance.\cite{fuzzy}
+    \item Relevant logic: avoids the sorites paradox by requiring relationship between premises and conclusions in implication statements.\cite{relevant}
+    \item Intuitionistic logic: avoids the law of excluded middle and double negation elimination. ($\neg\neg p \not\equiv p$)\cite{intuitionistic}
+\end{enumerate}
+
+Again, as an illustration, we can demonstrate how in this research these three logic systems may resolve the above issues in RBAC respectively.
+
+To address the limitation that access can only be either granted or denied, fuzzy logic may instead be used to assign probabilities to users based on their credentials and behaviour. This approach, rather than by defining the roles of users explicitly, resembles a ``credit system'' which may possibly be used in situations when access is determined according to the level of trustworthiness.
+
+In the meantime, relevant logic may be used to resolve the issue of role explosion.\cite{role-explosion} By providing a framework for expressing and comparing roles and permissions in terms of their relevance and redundancy, this logic system can reduce the number of roles needed and simplify the management of RBAC policies, leading to a more efficient and effective access control system.
+
+Intuitionistic logic can attend to the concern of insider threat by providing a framework for expressing uncertainty and ambiguity in access control decisions. The strict requirement not to allow the principle of excluded middle or non-contradiction may reduce unnecessary authorisations of file access, upholding the principle of least privileges in cyber security.
+
+The methodology of this research is to discover the potential of non-orthodox logic for enhanced access control models, done by proposing models based on these logic systems substitution options. We shall in turn investigate the advantages and concerns of these proposals with the comparison of one another.
+
+\subsection*{Limitations of the Research}
+
+A potential limitation of this research is the challenge of providing an all-round solution addressing all problems in the existing access control models concurrently.
+
+Different logic systems are innovated to resolve paradoxes and drawbacks of classical logic. Therefore, when new models are proposed with various logic systems, we may likely only resolve some issues at a time.
+
+The benefits of this project can be retained as we overcome such challenge by specifying the intended purposes of all kinds of access control models. Upon the successful development of multiple alternative access control models, they can be utilised for different situations according to the relevant needs.
+
+\section*{Evaluation Criteria}
+
+The outcomes of this research project can be evaluated with various techniques corresponding to the three main research questions.
+
+In connection with analysing the functions of formal logic in existing access control models, we will attempt to perform formal logic proofs based on the languages and grammar developed by researchers. The method of analysis shall be modelled after the proof examples in \textit{Access Control, Security and Trust: A Logical Approach} by S. K. Chin and S. Older\cite{proofs}, where abstractions of modern access control models are formalised by sequents and rules for natural deduction or sequent calculus. The completeness and soundness of the logic system are then taken into consideration to determine the comprehensiveness of each model.
+
+Regarding the limitations of existing access control models built upon orthodox logic, we shall attempt to discover their vulnerabilities and concerns. We should try to exploit the vulnerabilities in the models proposed by researchers, which demonstrates the level of inadequacy in terms of the models' articulacy, scalability\cite{distributed-systems} and flexibility. This can be evaluated by mathematically (or with actual access control systems, if applicable) demonstrating that the existing logical models are not able to fulfil some specifications for an access control solution.
+
+For instance, we shall create a scenario of access model usage in industrial applications where bivalent truth values are not sufficient for the management of users' roles and permissions. We may also conduct complexity analyses on how the existing models perform when there is a large number of roles and permissions required in an extensive database. As case studies with some exploitation of access control models are done, the limitations can be evaluated.
+
+For the discovery of improved models founded on non-classical logic, it is understood that these concepts should not only be rigorous theoretically but also be feasible practically. Therefore, it is proposed that, upon the exploration of conceptual models, we shall develop simulations of the proposed access control systems to demonstrate the possibility of real-world applications.
+
+Type checking, as mentioned above in the example of the RBAC language, is an vital element to ensure the correctness of model axioms. A strongly-typed functional programming language (e.g. Haskell) is therefore preferred for the coding demonstration.
+
+Depending on the extensiveness of the research, the project shall last for at least a semester. The initial weeks should be dedicated to theoretical proofs and review of previous literature while the subsequent time will be used for the realisation of access model proposals with a gradual increase of time and dedication to the development of simulation programs.
+
+\newpage
+
+\bibliographystyle{IEEEtranN}
+\bibliography{references.bib}
+
+\section*{Acknowledgements}
+
+During the process of writing this research proposal, the generative AI results produced by ChatGPT is taken as reference to gain directions for searching suitable reference materials, to refine the language, and to obtain guidance regarding \LaTeX\ syntax and citation styles.
+
+\end{document}
