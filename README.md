@@ -20,7 +20,7 @@ The [corresponding LaTeX file](Logic/main.tex) is also included.
 
 The [research proposal](AccessControl/ResearchProposal.pdf) and
 the [literature review](AccessControl/LiteratureReview.pdf) discover
-an implmentation of formal logic systems in cyber security by
+an implementation of formal logic systems in cyber security by
 enhancing access control models.
 
 We explore the characteristics of the existing access control theories,
