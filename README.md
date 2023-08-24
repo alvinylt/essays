@@ -11,7 +11,7 @@ is a short essay discovering the application of
 classical logic and the issues rising from the definition of
 implication.
 
-An introduction of two addidional values are proposed to resolve
+An introduction of two additional values are proposed to resolve
 the problem.
 
 The [corresponding LaTeX file](Logic/main.tex) is also included.
