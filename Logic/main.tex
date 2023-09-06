@@ -25,7 +25,8 @@
 }
 
 \title{COMP2620 Assignment 3}
-\subtitle {Resolving the Material Paradox of Implication from the Principle of Explosion in Orthodox Logic with Auxiliary Truth Values}
+\subtitle {Resolving the Material Paradox of Implication from the Principle of
+Explosion in Orthodox Logic with Auxiliary Truth Values}
 \author{Alvin Tang (u7447218)}
 \date{Due 29 May 2022}
 
@@ -33,11 +34,23 @@
 
 \maketitle
 
-While classical logic is an organised and well-developed method to formalise statements and facilitate the analysis of knowledge, paradoxes of material implication arise from the definition of the logical connectives in this logic system. The formalisation of expressions in everyday situations may not always accurately reflect the context and underlying meaning of sentences. In particular, orthodox logic defines an implication statement as true when the premise is false. The principle of explosion, which results in non-sensible statements, may be misused in the application of logical analysis as a consequence.
+While classical logic is an organised and well-developed method to formalise
+statements and facilitate the analysis of knowledge, paradoxes of material
+implication arise from the definition of the logical connectives in this logic
+system. The formalisation of expressions in everyday situations may not always
+accurately reflect the context and underlying meaning of sentences. In
+particular, orthodox logic defines an implication statement as true when the 
+premise is false. The principle of explosion, which results in non-sensible
+statements, may be misused in the application of logical analysis as a
+consequence.
 
 \bigskip
 
-In classical logic, the sequent $\vdash (p \land \neg p) \to q$ is semantically valid, regardless of the truth values of $p$ and $q$. In other words, it follows the principle of explosion which results in the sequent being a tautology. With vacuous discharge in the implication-introduction rule, it can be proven easily:
+In classical logic, the sequent $\vdash (p \land \neg p) \to q$ is semantically
+valid, regardless of the truth values of $p$ and $q$. In other words, it
+follows the principle of explosion which results in the sequent being a
+tautology. With vacuous discharge in the implication-introduction rule, it can
+be proven easily:
 
 \begin{equation*}
 \begin{matrix}
@@ -49,18 +62,44 @@ In classical logic, the sequent $\vdash (p \land \neg p) \to q$ is semantically 
 \end{matrix}
 \end{equation*}
 
-While this is semantically valid in classical logic, it might not be sensible in real-world situations. For instance, let $p$ and $q$ be the statements "it rains outside" and "an oak tree is an animal". Using orthodox logic, the following statement is valid and true:
+While this is semantically valid in classical logic, it might not be sensible
+in real-world situations. For instance, let $p$ and $q$ be the statements
+``it rains outside'' and ``an oak tree is an animal''. Using orthodox logic, the
+following statement is valid and true:
 \begin{quote}
-    \textit{If it rains outside and it does not rain outside, then an oak tree is an animal.}
+    \textit{If it rains outside and it does not rain outside, then an oak tree
+    is an animal.}
 \end{quote}
 
-In studies of real-world phenomena, such as analysis of natural languages and linguistics{\cite{Stanford}}, this certainly does not make sense. The premises and the conclusion are not correlated at all in context. In daily conversations, implication statements usually are not perceived as true when the negation of the premises is not observed or defined.
+In studies of real-world phenomena, such as analysis of natural languages and
+linguistics{\cite{Stanford}}, this certainly does not make sense. The premises
+and the conclusion are not correlated at all in context. In daily conversations,
+ implication statements usually are not perceived as true when the negation of
+ the premises is not observed or defined.
 
 \bigskip
 
-In light of this paradox, I would like to propose a modification to deductive reasoning by introducing two auxiliary truth values to the system, namely \textit{not defined} (\textit{null}) and \textit{not observed} (\textit{n/o}). The first truth value applies when neither truth nor falsity is applicable to a statement. The statement "if $1 + 1 = 3$, then the Sun is a planet", for example, should remain \textit{not defined} as the premise "$1 + 1 = 3$" essentially contradicts our perception of reality in this world. Therefore, the implication should not be taken into further consideration due to its lack of sensible truth. Meanwhile, the truth value \textit{n/o} should apply when an implication statement does not contradict the essence of this world, but the truth value of it is not yet apparent. As an illustration, suppose the statement "if it rains outside, then the floor is wet" ($p \to r$) is true. In classical logic, this is equivalent to the statement "it does not rain outside or the floor is wet" ($\neg p \lor r$). In reality, we cannot tell what would happen when it does not rain outside. The veracity of the statement can only be confirmed when the premises are observed. That is to say, we assign the value \textit{n/o} to a statement when we acknowledge that the statement is either true or false, but its truth value is not determined yet.
+In light of this paradox, I would like to propose a modification to deductive
+reasoning by introducing two auxiliary truth values to the system, namely
+\textit{not defined} (\textit{null}) and \textit{not observed} (\textit{n/o}).
+The first truth value applies when neither truth nor falsity is applicable to a
+statement. The statement "if $1 + 1 = 3$, then the Sun is a planet", for
+example, should remain \textit{not defined} as the premise "$1 + 1 = 3$"
+essentially contradicts our perception of reality in this world. Therefore, the
+implication should not be taken into further consideration due to its lack of
+sensible truth. Meanwhile, the truth value \textit{n/o} should apply when an
+implication statement does not contradict the essence of this world, but the
+truth value of it is not yet apparent. As an illustration, suppose the statement
+"if it rains outside, then the floor is wet" ($p \to r$) is true. In classical
+logic, this is equivalent to the statement ``it does not rain outside or the
+floor is wet'' ($\neg p \lor r$). In reality, we cannot tell what would happen
+when it does not rain outside. The veracity of the statement can only be
+confirmed when the premises are observed. That is to say, we assign the value
+\textit{n/o} to a statement when we acknowledge that the statement is either
+true or false, but its truth value is not determined yet.
 
-With the premises $p$ at the rows and the conclusions $q$ at the columns, the truth values of $p \to q$ can be defined as follows:
+With the premises $p$ at the rows and the conclusions $q$ at the columns, the
+truth values of $p \to q$ can be defined as follows:
 
 \begin{equation*}
 \begin{tabular}{|l||l|l|l|l|}
@@ -80,51 +119,123 @@ With the premises $p$ at the rows and the conclusions $q$ at the columns, the tr
 
 \bigskip
 
-There are several merits to applying this kind of logical system. The most significant advantage is that non-sensible truth values for implication statements can be avoided when logic formalisation is applied in linguistics or analysis of natural languages. The simply-typed lambda calculus{\cite{Lambda}} can be used to analyse the semantics of natural languages as the sentences can be given as lambda terms in a compositional way. While the types may correspond to the parts of speech or structural parts of a sentence in a natural language, the typing rules are introduced and implemented in the simply-typed lambda calculus using sequent calculus. This highlights the significance of formal logic in linguistics. To better formalise sentences used in daily communication, the new truth values may help represent the truth values of statements more accurately and takes the context of the statement into consideration. Consider the following statement as true:
+There are several merits to applying this kind of logical system. The most
+significant advantage is that non-sensible truth values for implication
+statements can be avoided when logic formalisation is applied in linguistics
+or analysis of natural languages. The simply-typed lambda
+calculus{\cite{Lambda}} can be used to analyse the semantics of natural
+languages as the sentences can be given as lambda terms in a compositional way.
+While the types may correspond to the parts of speech or structural parts of a
+sentence in a natural language, the typing rules are introduced and implemented
+in the simply-typed lambda calculus using sequent calculus. This highlights the
+significance of formal logic in linguistics. To better formalise sentences used
+in daily communication, the new truth values may help represent the truth values
+of statements more accurately and takes the context of the statement into
+consideration. Consider the following statement as true:
 
 \begin{quote}
     \textit{If the water gets to 100 degrees Celsius, it boils.} ($p \to q$)
 \end{quote}
 
-In human language, with or without knowledge of physics, we would understand the underlying inverse meaning that "if the water does not get to 100 degrees Celsius, it does not boil" ($\neg p \to \neg q$). In classical logic, however, both of the following statements do not contradict the initial statement $p \to q$:
+In human language, with or without knowledge of physics, we would understand
+the underlying inverse meaning that "if the water does not get to 100 degrees
+Celsius, it does not boil" ($\neg p \to \neg q$). In classical logic, however,
+both of the following statements do not contradict the initial statement
+$p \to q$:
 
 \begin{quote}
-    \textit{If the water does not get to 100 degrees Celsius, it boils.} ($\neg p \to q$)
+    \textit{If the water does not get to 100 degrees Celsius, it boils.}
+    ($\neg p \to q$)
 \end{quote}
 
 \begin{quote}
-    \textit{If the water does not get to 100 degrees Celsius, it does not boil.} ($\neg p \to \neg q$)
+    \textit{If the water does not get to 100 degrees Celsius, it does not boil.}
+    ($\neg p \to \neg q$)
 \end{quote}
 
-Using the auxiliary truth values and the new definition of logical connectives, the above propositions with the premise $\neg p$ remains \textit{not observed} and shall be pending assignment of truth values (true/false) once $\neg p$ and its resultant phenomena are observed.
+Using the auxiliary truth values and the new definition of logical connectives,
+the above propositions with the premise $\neg p$ remains \textit{not observed}
+and shall be pending assignment of truth values (true/false) once $\neg p$ and
+its resultant phenomena are observed.
 
 \bigskip
 
-The auxiliary truth values may, in the meantime, be useful for practical use in computer science and programming. Some programming languages, such as those with lazy evaluation, leave values not computed until they are required. In the meantime, there does not exist any solution to a problem due to its lack of computability. The Halting problem and division by zero are decent examples. A computer might be unable to give an answer to a problem or tell what would happen in the universe where division by zero is possible. In this case, the algorithm should assign the \textit{null} value to the variable, signifying the indetermination of a solution. Instead of assuming an implication statement is true when the premises are contradictory or false, we should make it clear that some statement-like sentences do not have a true/false value. When computation theories, being the underlying principle of programming and computing, utilise these new definitions of logical connectives, we may better formalise logic in the field of computer science.
+The auxiliary truth values may, in the meantime, be useful for practical use in
+computer science and programming. Some programming languages, such as those
+with lazy evaluation, leave values not computed until they are required. In the
+meantime, there does not exist any solution to a problem due to its lack of
+computability. The Halting problem and division by zero are decent examples. A
+computer might be unable to give an answer to a problem or tell what would
+happen in the universe where division by zero is possible. In this case, the
+algorithm should assign the \textit{null} value to the variable, signifying the
+indetermination of a solution. Instead of assuming an implication statement is
+true when the premises are contradictory or false, we should make it clear that
+some statement-like sentences do not have a true/false value. When computation
+theories, being the underlying principle of programming and computing, utilise
+these new definitions of logical connectives, we may better formalise logic in
+the field of computer science.
 
 \bigskip
 
-Notwithstanding the advantages in practical applications of the auxiliary truth values, there are also some drawbacks and incompleteness in the new definition of implication and other logical connectives. The most significant downside is that the above modifications to orthodox logic do not resolve the issue of "correlation does not imply causation". With reference to the new definition of implication, an implication statement is true when both the premise and the conclusion are true. Consider the following statement ($p \to q$):
+Notwithstanding the advantages in practical applications of the auxiliary truth
+values, there are also some drawbacks and incompleteness in the new definition
+of implication and other logical connectives. The most significant downside is
+that the above modifications to orthodox logic do not resolve the issue of
+``correlation does not imply causation''. With reference to the new definition
+of implication, an implication statement is true when both the premise and the
+conclusion are true. Consider the following statement ($p \to q$):
 
 \begin{quote}
     \textit{If oranges are fruits, then magpies are birds.}
 \end{quote}
 
-Apparently, both the premises and the conclusions are valid and true. However, there is no evidence or reasoning that magpies being birds ($q$) is a result of oranges being fruits ($p$). The new system takes observations of statements into account yet overlooks the importance of the causation relationship in implication statements. To resolve this problem, the definition of implication can be further refined along with the integration with relevant logic.
+Apparently, both the premises and the conclusions are valid and true. However,
+there is no evidence or reasoning that magpies being birds ($q$) is a result of
+oranges being fruits ($p$). The new system takes observations of statements into
+account yet overlooks the importance of the causation relationship in
+implication statements. To resolve this problem, the definition of implication
+can be further refined along with the integration with relevant logic.
 
 \bigskip
 
-Another possibly unfavourable condition is that the nature of observation and the perception of reality in humans are time-dependent. The \textit{not observed} truth value is applicable and assigned to statements which are either true or false, but the observer has not determined the truth. In particular, it is designed to tackle the situation when the premises in an implication statement are false and to interdict the principle of explosion. A time-dependent logic system may be useful in practical situations, such as the execution of algorithms, but may impede the logical reasoning of philosophers to find the fundamental and intrinsic essence of the world. While insufficient rigorosity may be a result of time dependence, the auxiliary truth values may be useful in practical use or specific application in certain fields of academic studies. This could only be resolved by polishing the rules for logical connectives after clarifying the definition of \textit{implication} itself.
+Another possibly unfavourable condition is that the nature of observation and
+the perception of reality in humans are time-dependent. The
+\textit{not observed} truth value is applicable and assigned to statements which
+are either true or false, but the observer has not determined the truth. In
+particular, it is designed to tackle the situation when the premises in an
+implication statement are false and to interdict the principle of explosion.
+A time-dependent logic system may be useful in practical situations, such as
+the execution of algorithms, but may impede the logical reasoning of
+philosophers to find the fundamental and intrinsic essence of the world. While
+insufficient rigorosity may be a result of time dependence, the auxiliary truth
+values may be useful in practical use or specific application in certain fields
+of academic studies. This could only be resolved by polishing the rules for
+logical connectives after clarifying the definition of \textit{implication}
+itself.
 
 \bigskip
 
-Classical logic, taking everything into account, is a well-developed system to formalise statements and help us develop knowledge in various fields of study. Nevertheless, the material paradoxes of implication arising from its definition may cause nonsensical or unrealistic formalisation of statements. There are ways to improve the system for facilitating the practical use of logic, including the introduction of supplementary truth values. The above introduction of auxiliary truth values may be used for practical applications of logic. The drawbacks of non-classical logic systems, along with the essence of implication, are yet to be resolved by philosophers and scientists.
+Classical logic, taking everything into account, is a well-developed system to
+formalise statements and help us develop knowledge in various fields of study.
+Nevertheless, the material paradoxes of implication arising from its definition
+may cause nonsensical or unrealistic formalisation of statements. There are ways
+to improve the system for facilitating the practical use of logic, including the
+introduction of supplementary truth values. The above introduction of auxiliary
+truth values may be used for practical applications of logic. The drawbacks of
+non-classical logic systems, along with the essence of implication, are yet to
+be resolved by philosophers and scientists.
 
 \newpage
 
 \section*{Acknowledgements}
 
-The concepts regarding the application of semantics and sequent calculus were inspired by the course content in COMP1130. A guest lecture in the course by Florie Verity introduced us to the application of lambda calculus and formal logic in natural language semantics. The lecture involving the simply-typed lambda calculus inspired me to mention the application of sequent calculus in computer science. Meanwhile, the idea of introducing additional truth values is inspired by the discussions during the COMP2620 tutorial in week 11.
+The concepts regarding the application of semantics and sequent calculus were
+inspired by the course content in COMP1130. A guest lecture in the course by
+Florie Verity introduced us to the application of lambda calculus and formal
+logic in natural language semantics. The lecture involving the simply-typed
+lambda calculus inspired me to mention the application of sequent calculus in
+computer science. Meanwhile, the idea of introducing additional truth values is
+inspired by the discussions during the COMP2620 tutorial in week 11.
 
 \bibliographystyle{plain}
 \bibliography{references}
