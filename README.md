@@ -20,10 +20,10 @@ Supervisor: AsPr Alwen Tiu
 [_Resolving the Material Paradox of Implication from the Principle
 of Explosion in Orthodox Logic with Auxiliary Truth Values_](Logic/main.pdf)
 is a short essay discovering the application of
-classical logic and the issues rising from the definition of
+classical logic and the issues arising from the definition of
 implication.
 
-An introduction of two additional values are proposed to resolve
+An introduction of two additional values is proposed to resolve
 the problem.
 
 The [corresponding LaTeX file](Logic/main.tex) is also included.
