@@ -12,6 +12,7 @@ using satisfiability modulo theories (SMT), followed by a parser and
 translator implementation with Rust and C.
 
 Co-authors: Divyam Pahuja, Klim Tsoutsman
+
 Supervisor: AsPr Alwen Tiu
 
 ## COMP2620 Logic
@@ -39,4 +40,4 @@ their limitations and how classical logic is used therein. We then
 delve into the possibility of utilising non-classical logic systems
 for improving the models.
 
-Last updated: 2023-11-09
+Last updated: 2023-11-21
